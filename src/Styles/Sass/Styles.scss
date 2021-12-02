@@ -1,0 +1,62 @@
+@import "config";
+@import "navbar";
+@import "product";
+@import "footer";
+@import "category";
+@import "scrollbar";
+@import "login";
+@import "detailPage";
+@import "related";
+@import "checkoutProduct";
+@import "checkout";
+@import "filters";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  &::selection {
+    background-color: $tertiary;
+  }
+}
+
+body {
+  background-color: $grey;
+}
+
+.router-link {
+  text-decoration: none;
+  color: $text;
+
+  &:hover {
+    color: $tertiary;
+  }
+}
+
+.container {
+  max-width: 1400px;
+  margin: 70px auto 30px !important;
+  position: relative;
+
+  &-title {
+    text-align: center;
+
+    padding: 50px 0;
+  }
+}
+
+.main-content {
+  min-height: calc(100vh - 91px);
+}
+
+.none {
+  display: none !important;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 400px);
+  justify-content: space-around;
+  grid-gap: 50px 25px;
+}

@@ -1,0 +1,86 @@
+.filters {
+  position: absolute;
+  top: 100px;
+  z-index: 40;
+
+  h1 {
+    margin: 0 10px;
+    font-size: 1.5rem;
+    text-decoration: underline;
+    cursor: pointer;
+
+    &:hover {
+      color: $secondary;
+    }
+  }
+
+  &-slide {
+    position: relative;
+    top: 59px;
+    height: 215px;
+    width: 200px;
+    border-radius: 5px;
+    background-color: $primary;
+    margin: 0 10px;
+    transform: translateX(-110%);
+    transition: transform 0.4s ease-in-out;
+    font-size: 1.2rem;
+
+    p {
+      padding: 10px;
+    }
+
+    &-price {
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px;
+
+      div {
+        margin-top: 5px;
+        padding: 0 10px;
+
+        button {
+          background: none;
+          border: none;
+          border-bottom: 1px solid $secondary;
+          font-size: 1.1rem;
+          cursor: pointer;
+        }
+      }
+    }
+
+    &-rating {
+      margin-top: 30px;
+      display: flex;
+      align-items: center;
+
+      i {
+        cursor: pointer;
+
+        &:hover {
+          color: #ffc600;
+        }
+      }
+
+      i.active {
+        color: #ffc600;
+      }
+    }
+  }
+
+  .remove-rating {
+    background-color: $secondary;
+    border: none;
+    padding: 4px;
+    margin: 0 10px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $tertiary;
+    }
+  }
+
+  .filters-slide.active {
+    transform: translateX(0%) !important;
+  }
+}

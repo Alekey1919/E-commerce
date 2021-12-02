@@ -1,0 +1,175 @@
+.navbar-mobile {
+  display: none;
+  position: fixed;
+  left: -100vw;
+  min-width: 100vw;
+  min-height: 100vh;
+  top: 70px;
+  background-color: $primary;
+  transition: left 0.4s ease-in-out;
+  z-index: 50;
+}
+
+.navbar {
+  background-color: $primary;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 50;
+
+  &-logo {
+    margin-left: 70px;
+  }
+
+  &-links {
+    margin-right: 70px;
+    ul {
+      display: flex;
+      list-style-type: none;
+
+      li {
+        padding: 0 10px;
+        margin: auto;
+
+        button {
+          font-size: 19px;
+          background: none;
+          border: none;
+          cursor: pointer;
+          color: $text;
+          position: relative;
+          top: 1px;
+
+          &:hover {
+            color: $tertiary;
+          }
+        }
+      }
+
+      input {
+        margin-right: 10px;
+        padding: 5px;
+        border-radius: 2px;
+        border: none;
+        outline: none;
+
+        &::placeholder {
+          padding: 0 5px;
+        }
+      }
+    }
+  }
+
+  .logout {
+    color: $text;
+  }
+}
+
+.navbar-hamburguer {
+  position: relative;
+  display: none;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  top: -3px;
+  right: 50px;
+
+  appearance: none;
+  background: none;
+  outline: none;
+  border: none;
+
+  &::after,
+  &::before,
+  .bar {
+    content: "";
+    display: block;
+    width: 36px;
+    height: 5px;
+    background-color: $text;
+    border-radius: 2px;
+    margin: 6px 0;
+    transition: all 0.3s;
+  }
+
+  &:hover {
+    .bar {
+      background-color: $tertiary;
+      transform: translateX(10px);
+    }
+  }
+
+  &.active::before {
+    transform: rotate(-45deg) translate(-5px, 5px);
+  }
+
+  &.active::after {
+    transform: rotate(45deg) translate(-10px, -10px);
+  }
+
+  &.active > div {
+    opacity: 0;
+  }
+
+  &.active:hover {
+    &::before,
+    &::after {
+      background-color: $tertiary;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .navbar-links {
+    display: none;
+  }
+
+  .navbar-hamburguer {
+    display: block;
+  }
+
+  .navbar-mobile {
+    display: block;
+    &.active {
+      left: 0;
+    }
+
+    ul {
+      margin-top: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      list-style-type: none;
+      gap: 20px;
+      font-size: 1.3rem;
+
+      button {
+        font-size: 19px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: $text;
+        position: relative;
+        top: 1px;
+
+        i {
+          margin-left: 10px;
+        }
+      }
+
+      input {
+        margin-right: 10px;
+        padding: 5px 0;
+        border-radius: 2px;
+        border: none;
+        outline: none;
+      }
+    }
+  }
+}

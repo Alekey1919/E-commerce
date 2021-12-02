@@ -1,0 +1,118 @@
+.detail-page {
+  display: flex;
+  justify-content: space-around;
+
+  &-img {
+    height: 500px;
+    width: 500px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 85%;
+    }
+  }
+
+  &-categories {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+
+    ul {
+      display: flex;
+      list-style-type: none;
+
+      li {
+        color: #212121;
+        padding: 0 10px;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &-info {
+    margin-top: 100px;
+
+    h2,
+    p,
+    select,
+    button,
+    label {
+      margin-top: 50px !important;
+    }
+
+    select {
+      background-color: $grey;
+      border: none;
+      font-size: 1.2rem;
+
+      &:focus {
+        outline: none;
+      }
+
+      &:first-of-type {
+        margin: 0 20px 0 0;
+      }
+    }
+
+    .add-to-basket {
+      input {
+        width: 50px;
+        font-size: 1.1rem;
+        background: none;
+        border-radius: 5px;
+        border: 1px solid $primary;
+      }
+
+      button {
+        background-color: $primary;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        margin: 0 10px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $tertiary;
+        }
+      }
+    }
+  }
+
+  &-related-title {
+    text-align: center;
+    margin: 50px 0;
+  }
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  justify-content: space-around;
+  grid-gap: 50px 25px;
+}
+
+@media (max-width: 760px) {
+  .detail-page-img {
+    width: 300px;
+  }
+}
+
+@media (max-width: 560px) {
+  .add-to-basket {
+    display: flex;
+    flex-direction: column;
+    label,
+    button,
+    input {
+      margin-top: 10px !important;
+    }
+
+    button {
+      width: 150px;
+      margin: 10px 0 !important;
+    }
+  }
+}
