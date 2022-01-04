@@ -25,26 +25,17 @@ function Home() {
         return a.price - b.price;
       });
 
-      setLoading(true); // I'm not sure why but you need to stop rendering the homepage and start again when you have setted the sorted state of products because if you just set the products state to the new value it doesn't trigger a re-render.
-
-      setTimeout(() => {
-        setRatedProducts(sorted);
-        setLoading(false);
-      }, 100);
+      setRatedProducts([...sorted]);
     } else {
       // Rated filter is off
       const sorted = products.sort((a, b) => {
         return a.price - b.price;
       });
 
-      setLoading(true); // The same here.
-
-      setTimeout(() => {
-        setProducts(sorted);
-        setLoading(false);
-      }, 100);
+      setProducts([...sorted]);
     }
   };
+
   const handleDescending = () => {
     if (ratedProducts) {
       // Check if the rated filter is on
@@ -52,23 +43,13 @@ function Home() {
         return b.price - a.price;
       });
 
-      setLoading(true);
-
-      setTimeout(() => {
-        setRatedProducts(sorted);
-        setLoading(false);
-      }, 100);
+      setRatedProducts([...sorted]);
     } else {
       const sorted = products.sort((a, b) => {
         return b.price - a.price;
       });
 
-      setLoading(true);
-
-      setTimeout(() => {
-        setProducts(sorted);
-        setLoading(false);
-      }, 100);
+      setProducts([...sorted]);
     }
   };
 
