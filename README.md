@@ -1,3 +1,11 @@
+![Preview](./src/Assets/Images/Preview.png)
+
+### E-commerce site 🛒
+
+[Visit site](https://sharp-leakey-22e33a.netlify.app/)
+
+[Server code](https://github.com/Alekey1919/E-commerce)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
